@@ -1,0 +1,27 @@
+{
+    "manifest_version" : 2,
+    "name" : "USBMailAction",
+    "description" : "Custom filter action to support USB LED Dream Cheeky webmail notifier (aka USB Webmail Window). The code bases on FiltaQuilla from Axel Grude,  Pawel Tomulik and James R Kent. The extension runs an included  binary program that can manage the USB part. This program is precompiled for Windows, Linux and Mac in 32bit and 64bit. See github page for details. ",
+    "version" : "2.0",
+    "author" : "James R Kent, Axel Grude, Pawel Tomulik, Andreas Bohne-Lang",
+    "legacy" : {
+        "options" : {
+            "page" : "chrome://usbmailaction/content/options.xul",
+            "open_in_tab" : false
+        }
+    },
+    "developer" : {
+        "name" : "Andreas Bohne-Lang,  Axel Grude",
+        "url" : "https://github.com/bohnelang/usbmailaction/"
+    },
+    "applications" : {
+        "gecko" : {
+            "id" : "usbmailaction@bohne-lang.de",
+            "strict_min_version" : "60.0"
+        }
+    },
+    "icons" : {
+        "32" : "skin/usbmailaction-32.png",
+        "64" : "skin/usbmailaction-64.png"
+    }
+}

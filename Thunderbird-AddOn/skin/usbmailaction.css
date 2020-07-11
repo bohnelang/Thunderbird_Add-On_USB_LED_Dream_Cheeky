@@ -1,0 +1,23 @@
+
+.ruleactiontarget[type="usbmailaction@bohne-lang.de#runFile"] {
+  -moz-box-flex: 1;
+}
+
+
+
+toolbarbutton.focusbutton {
+  -moz-user-focus: normal;
+}
+
+
+
+.search-value-custom[searchAttribute="usbmailaction@bohne-lang.de#javascript"] {
+  -moz-binding: url("chrome://usbmailaction/content/bindings.xml#javascript");
+}
+
+
+
+.search-value-custom[searchAttribute="usbmailaction@bohne-lang.de#threadanytag"] {
+  -moz-binding: url("chrome://usbmailaction/content/bindings.xml#tag");
+}
+

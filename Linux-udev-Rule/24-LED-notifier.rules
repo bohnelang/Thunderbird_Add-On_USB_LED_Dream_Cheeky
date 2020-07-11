@@ -1,0 +1,5 @@
+#udevadm control --reload
+#New USB device found, idVendor=1294, idProduct=1320, bcdDevice= 1.00
+
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="plugdev"
+SUBSYSTEMS=="usb", ATTRS{manufacturer}=="Dream Cheeky", ATTRS{idVendor}=="1294", ATTRS{idProduct}=="1320", MODE="0664", GROUP="plugdev"

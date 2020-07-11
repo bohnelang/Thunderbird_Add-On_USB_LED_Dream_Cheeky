@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ ***** BEGIN LICENSE BLOCK *****
+ * This file is part of USBMailAction Custom Filter Actions 
+ *
+ * USBMailAction is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with USBMailAction.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is FiltaQuilla code by Axel Grude.
+ *
+ * The Initial Developer of the Original Code is
+ * Kent James <rkent@mesquilla.com>
+ * Portions created by the Initial Developer are Copyright (C) 2008
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *
+ * ***** END LICENSE BLOCK *****
+ */
+-->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://messenger/skin/preferences/preferences.css" type="text/css" ?>
+<?xml-stylesheet href="chrome://usbmailaction/skin/usbmailaction-prefs.css" type="text/css" ?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://usbmailaction/locale/prefwindow.dtd">
+<dialog id="usbmailactionPreferences"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            title="&prefwindow.title;"
+            onload="onLoad();">
+  <script type="application/javascript" src="chrome://usbmailaction/content/options.js"/>
+  <script type="application/javascript" src="chrome://usbmailaction/content/usbmailaction-util.js"/>
+
+  <hbox class="title">USBMailAction - <spacer flex="5" />
+    <label id="fq-options-header-version"> </label>
+  </hbox>
+
+  <prefpane id="pane1" label="&pane1.title;">
+
+    <preferences>
+      <preference id="runFileEnabled" name="extensions.usbmailaction.runFile.enabled" type="bool"/>
+      <preference id="debug" name="extensions.usbmailaction.debug" type="bool"/>
+    </preferences>
+
+    <vbox>
+
+    <tabbox id="usbmailactiontabbox" flex="1">
+      <tabs class="icontabs">
+       <tab label="&filterActions;" id="filterActionsTab"/>
+        <tab label="&aboutAndSupport;" id="supportTab"/>
+      </tabs>
+
+      <tabpanels flex="1">
+	  
+        <!-- Filter actions -->
+        <tabpanel orient="vertical">
+          <label value="How to configure this filter:"/>
+
+          <vbox class="linkBox">
+<hbox class="preBox" >
+This Thunderbird add-on creats an new Filter calles "USB-Notifier".
+
+You need to activate this filter manualy and you can choose a 
+different color for each mail account if you like. 
+
+Open main Thunderbird menue and scroll  down until "Message Filter" and click this entry. 
+
+In the new window popping up click again "Message Filter".
+
+In the next window click on "New..." to create a new filter. 
+
+In this window change "Subject" to "Status" and "contains" to "is" and "Replied" to "New". 
+The line should look like [Status][is][New] . In the part "Perform there actions:" please 
+change "Move Message to" to "USB-Notifier" and set the value to the color code. E.g. 1 (the 
+complete color codes are listed below). Close this box with "OK" and move this new created 
+filter on the last position by clicking the button "Move down". That's it. 
+
+Color codes:
+0)off  1)red  2)green  3)yellow  4)blue  5)magenta  6)cyan  7)white
+  
+
+Attention: 
+On Linux you need to define an udev-rule to allow normal user to have access to the hardware (USB device). 
+Otherwise only root can use the LED USB device. See https://github.com/bohnelang/usbmailaction for details.
+
+</hbox>	
+		  </vbox>
+        </tabpanel>
+        
+        <tabpanel orient="vertical">
+		  <vbox class="linkBox">
+			<hbox>
+				<spacer flex="1" />
+				<spacer flex="1" />
+			</hbox>
+			<table class="linkDescriptionBox">
+              <tr>
+                <td>
+                  <img src="chrome://usbmailaction/skin/usbmailaction-32.png"
+                       class="customLogo"
+                       id="usbmailaction_img" />
+                </td>
+                <td>
+<hbox class="preBox" >
+This Thunderbird USBMailAction filter can interface an USB LED device known as 
+"USB Webmail Notifier" or "Dream Cheeky DL100B Webmail Notifier" by an embedded binary. 
+The embedded binaries are for precompiled for Windows, Mac and Linux in 32bit and 64bit.
+The code bases on FiltaQuilla. 
+
+Have fun - Andreas Bohne-Lang (2020) https://github.com/bohnelang/usbmailaction
+
+My very best thanks to Axel Grude, who helped me to finish this custom filter project.
+ 
+Best (github-)thanks to:
+			
+* Axel Grude (Realraven) for his FiltaQuilla and ToneQuilla on that my add-on bases.
+* R Kent James (rkent) who wrote code on which FiltaQuilla bases.
+* Paweł Tomulik (ptomulik) who add new features to FiltaQuilla.
+* Paul Gallagher (tardate) for his blinky.c code on that the USB interface bases.
+* Alan Ott (signal11) for his great HID-API to use the same C interface code on Windows, Linux and Mac. 
+* Damien Zammit (zamaudio) for his simlpe and greate cross-apple environment. 
+* energy condensed to a slow vibration (phracker) for leaking MacOSX10.7.sdk.
+* M-ware Electronics in Markkleeberg for selling still some of these cool LED USB ID8768 EAN/GTIN 4051154077093 gadgets.
+</hbox>
+		  
+                </td>
+              </tr>
+	</table>
+					</vbox>
+					<vbox>
+				 	<hbox> 
+								<span>
+									<checkbox id="checkRunFileEnabled" preference="runFileEnabled"
+														label="&checkRunFileEnabled.label;"
+														accesskey="&checkRunFileEnabled.accesskey;"/>
+									
+</span>
+					</hbox>
+          
+					<hbox>
+						<spacer flex="1" />
+						<checkbox id="checkJavascriptEnabled"
+											preference="debug"
+											instantApply="true"
+											label="Debug"
+											oncontextmenu="USBMailAction.Util.toggleBoolPreference(this,true);USBMailAction.Util.showAboutConfig(this, 'usbmailaction.debug', true);return false;"
+											/>
+					</hbox>
+					</vbox>
+
+
+		</tabpanel>
+	</tabpanels>
+    </tabbox>
+</vbox>
+
+
+
+
+  </prefpane>
+	<script type="application/javascript" src="chrome://global/content/preferencesBindings.js" />
+	<script>
+	  USBMailAction.Util.loadPreferences(); /* Tb 66 compatibility. Should be called _before_ DOMcontent Loaded event */
+	</script>
+
+</dialog>

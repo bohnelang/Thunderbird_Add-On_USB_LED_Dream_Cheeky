@@ -1,0 +1,9 @@
+#!/bin/bash
+
+./build.sh
+
+D=`ls -tr *.xpi | tail -1`
+
+echo  $D
+
+cp $D /mnt/share1

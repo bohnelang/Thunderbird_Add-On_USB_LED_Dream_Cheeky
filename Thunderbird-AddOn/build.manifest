@@ -1,0 +1,9 @@
+chrome.manifest
+components
+defaults
+content
+content/bin
+license.txt
+locale
+manifest.json
+skin

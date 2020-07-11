@@ -1,0 +1,6 @@
+resource usbmailaction   content/
+content  usbmailaction   content/
+locale   usbmailaction   en-US      locale/en-US/
+skin     usbmailaction   classic/1.0   skin/
+overlay  chrome://messenger/content/messenger.xul chrome://usbmailaction/content/usbmailaction.xul
+overlay  chrome://messenger/content/FilterEditor.xul chrome://usbmailaction/content/filterEditorOverlay.xul

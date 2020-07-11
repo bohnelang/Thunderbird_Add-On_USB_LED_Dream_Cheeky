@@ -1,0 +1,18 @@
+<!ENTITY prefwindow.title "USBMailAction preferences">
+<!ENTITY pane1.title "USBMailAction Preferences">
+<!-- filter actions -->
+<!ENTITY checkRunFileEnabled.label "Run Program">
+<!ENTITY checkRunFileEnabled.accesskey "R">
+<!ENTITY optionsIntro "Enable all items that you want to have available in the 'filter rules' dialog. Restart after changes.">
+<!ENTITY filterActions "Filter Actions">
+<!ENTITY searchTerms "Search Terms">
+<!ENTITY aboutAndSupport "About USBMailAction / Help">
+<!ENTITY supportPage "Visit Support Page">
+<!ENTITY supportPage_desc "This Page describes the different actions and conditions you can add to mail filters with USBMailAction.">
+<!ENTITY quickFiltersPage "Get quickFilters!">
+<!ENTITY quickFiltersPage_desc "Download this awesome Add-on to turbo-charge your filtering. quickFilters makes filter definition and management a breeze.">
+<!ENTITY supportUSBMailAction "Support USBMailAction">
+<!ENTITY supportUSBMailAction_desc "USBMailAction is free to download and use - the best way to support the development team is by buying a license for quickFilters Pro. It is the most awesome filter extensions for managing and creating filters in a super convenient way.">
+<!-- search terms -->
+<!ENTITY helpFeatureTip "Show Details on this feature">
+
