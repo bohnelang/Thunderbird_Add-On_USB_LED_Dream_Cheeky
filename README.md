@@ -45,7 +45,7 @@ There is only one property you can set - Debug enabled.
 ![Show Add-on](./gitmisc/ShowAddOn.JPG)
 
 ## Acknowledgment
-This project combines experience and code from other developer. The most of the Thunderbird add-on code war taken from taken from Axel's FiltaQuilla.
+This project combines experience and code from other developer. The most of the Thunderbird add-on code was taken from taken from Axel's FiltaQuilla.
 
 - Axel Grude (Realraven) for his FiltaQuilla (and ToneQuilla [https://github.com/RealRaven2000](https://github.com/RealRaven2000) 
 - R Kent James (rkent) [https://github.com/rkent/](https://github.com/rkent/glodaquilla)
