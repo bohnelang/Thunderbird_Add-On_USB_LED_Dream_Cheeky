@@ -55,7 +55,7 @@ This project combines experience and code from other developer. The most of the 
 - Damien Zammit (zamaudio) for the cross mac environment [zamaudio/cross-apple](https://github.com/zamaudio/cross-apple)
 - phracker [phracker/MacOSX-SDKs](https://github.com/phracker/MacOSX-SDKs)
 
- A big thank you to all og them. Special thanks to Axel who answered my questions and provided a lot of very helpful pieces of advice!
+ A big thank you to all of them. Special thanks to Axel who answered my questions and provided a lot of very helpful pieces of advice!
 
 
 
