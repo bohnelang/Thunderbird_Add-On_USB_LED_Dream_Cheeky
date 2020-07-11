@@ -2,9 +2,9 @@
 
 ![USB Webmail notifier](./gitmisc/LED2.jpg)
 
-This Thunderbird add-on installs a custom action filter that provides an  interface to a binary program that can set a color and can switch on and off the USB-device. On incoming mails you can let blink the LED device :-)
+This Thunderbird add-on installs a custom action filter that provides an  interface to a binary program that can set a color and can switch on and off the USB-device. On incoming mails you can let blink the LED gadget :-)
 
-The Add-on contains binary programs  to interface the hardware. Maybe a antivirus programm will check it while installation. All binaries are build on a Linux host. There are binaries for Windows, Linux and Mac ind a 32bit and 64bit program. 
+The add-on contains binary programs to interface the hardware. Maybe a antivirus programm will check it while installation. All binaries are build on a Linux host. There are binaries for Windows, Linux and Mac in a 32bit and 64bit program. 
 
 
 
