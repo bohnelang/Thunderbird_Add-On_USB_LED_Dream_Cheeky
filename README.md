@@ -50,15 +50,18 @@ Special thanks to Axel who answered my questions and provided a lot of very help
 ](https://github.com/torvalds/linux/blob/master/drivers/hid/hid-led.c)
 - Linux Kernel-Module: [Webmail Notifier Linux Driver] (https://github.com/nathan-osman/Webmail-Notifier-Linux-Driver)
 - Linux-Kernel driver for hidraw interface: [linux/drivers/hid/hid-led.c
->dmesg 
-> ...
->  usb 3-4: new low-speed USB device number 6 using ohci-pci
->  usb 3-4: New USB device found, idVendor=1294, idProduct=1320, bcdDevice= 1.00
->  usb 3-4: New USB device strings: Mfr=1, Product=2, SerialNumber=0
->  usb 3-4: Product: MAIL 
->  usb 3-4: Manufacturer: MAIL 
->  hid-led 0003:1294:1320.0003: hidraw0: USB HID v1.10 Device [MAIL  MAIL ] on usb-0000:00:13.1-4/input0
->  
-> Switch led on / off on bash level:
-> sudo echo "1" > /sys/class/leds/riso_kagaku0\:blue/brightness 
-> sudo echo "0" > /sys/class/leds/riso_kagaku0\:blue/brightness 
+
+```
+dmesg 
+ ...
+  usb 3-4: new low-speed USB device number 6 using ohci-pci
+  usb 3-4: New USB device found, idVendor=1294, idProduct=1320, bcdDevice= 1.00
+  usb 3-4: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+  usb 3-4: Product: MAIL 
+  usb 3-4: Manufacturer: MAIL 
+  hid-led 0003:1294:1320.0003: hidraw0: USB HID v1.10 Device [MAIL  MAIL ] on usb-0000:00:13.1-4/input0
+  
+ Switch led on / off on bash level:
+ sudo echo "1" > /sys/class/leds/riso_kagaku0\:blue/brightness 
+ sudo echo "0" > /sys/class/leds/riso_kagaku0\:blue/brightness
+```
