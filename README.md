@@ -1,4 +1,4 @@
-# Thunderbird Add-On for interfacing Dream Cheeky DL100B Webmail Notifier. 
+# Thunderbird Add-On for interfacing LED Dream Cheeky DL100B Webmail Notifier. 
 
 ![USB Webmail notifier](./gitmisc/LED2.jpg)
 
