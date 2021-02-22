@@ -1,5 +1,7 @@
 # Thunderbird Add-On for interfacing LED Dream Cheeky DL100B Webmail Notifier. 
 
+*This add-on is outdated - the last version you can run is Thunderbird 68.0. With Thunderbird 78 a new add-on-API was implemented and at the moement I do not have thome to update implementation...*
+
 ![USB Webmail notifier](./gitmisc/LED2.jpg)
 
 This Thunderbird add-on installs a custom action filter that provides an  interface to a binary program that can set a color and can switch on and off the USB-device. On incoming mails you can let blink the LED gadget :-)
