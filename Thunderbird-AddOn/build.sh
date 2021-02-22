@@ -32,5 +32,6 @@ XPI="`pwd`/${XPI}";
   fi
 )
 
-mf -f  ${XPI} .. 
 cp ${XPI} /tmp/
+mv -f  ${XPI} .. 
+
