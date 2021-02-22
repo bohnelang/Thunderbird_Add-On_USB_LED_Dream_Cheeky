@@ -1,6 +1,8 @@
 # Thunderbird Add-On for interfacing LED Dream Cheeky DL100B Webmail Notifier. 
 
-*This add-on is outdated - the last version you can run is Thunderbird 68.0. With Thunderbird 78 a new add-on-API was implemented and at the moement I do not have thome to update implementation...*
+
+**This add-on is outdated - the last version you can run is Thunderbird 68.0. With Thunderbird 78 a new add-on-API was implemented and at the moement I do not have thome to update implementation...**
+
 
 ![USB Webmail notifier](./gitmisc/LED2.jpg)
 
