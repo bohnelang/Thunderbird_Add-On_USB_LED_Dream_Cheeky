@@ -54,7 +54,7 @@ This project combines experience and code from other developer. The most of the 
 - Axel Grude (Realraven) for his FiltaQuilla (and ToneQuilla [https://github.com/RealRaven2000](https://github.com/RealRaven2000) 
 - R Kent James (rkent) [https://github.com/rkent/](https://github.com/rkent/glodaquilla)
 - Paweł Tomulik (ptomulik) [https://github.com/ptomulik](https://github.com/ptomulik) 
-- Paul Gallagher (tardate) for the blincy.c code [LittleArduinoProjects/8051/AT89C2051/Blinky](https://github.com/tardate/LittleArduinoProjects/blob/master/8051/AT89C2051/Blinky/README.md)
+- Paul Gallagher (tardate) for the blincy.c code [LittleArduinoProjects/Electronics101/UsbNotifier/](https://github.com/tardate/LittleArduinoProjects/blob/master/Electronics101/UsbNotifier/)
 - Alan Ott (signal11) for his multi-platform HID-API [signal11/hidapi](https://github.com/signal11/hidapi)
 - Damien Zammit (zamaudio) for the cross mac environment [zamaudio/cross-apple](https://github.com/zamaudio/cross-apple)
 - phracker [phracker/MacOSX-SDKs](https://github.com/phracker/MacOSX-SDKs)
