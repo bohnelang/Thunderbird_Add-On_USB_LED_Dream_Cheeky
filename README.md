@@ -3,6 +3,8 @@
 
 **This add-on is outdated - the last version you can run is Thunderbird 68.0. With Thunderbird 78 a new add-on-API was implemented and at the moement I do not have the time to update implementation...**
 
+**Work around:** Combine the add-on "FilaQuilla" and the "blinky" binary from this project and run this program on new incoming mails. 
+
 
 ![USB Webmail notifier](./gitmisc/LED2.jpg)
 
