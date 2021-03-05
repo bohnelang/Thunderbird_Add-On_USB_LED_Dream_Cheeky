@@ -85,7 +85,8 @@ dmesg
 
 
 ## How an add-on can use USB devices
-The add-on carries for the most operating systems a binary that can interface the HID interface. The add-on can execute this binary but only as a real file in filesystem.
+The add-on carries for the most operating systems a binary that can interface the HID interface. The add-on can execute this binary but only as a real file in filesystem. Great parts of the code are witten by Axel Grude. I added new features.
+
 - Copy binaries from add-on to local file system (profile directory)
 - Make them executable
 - Execute them
