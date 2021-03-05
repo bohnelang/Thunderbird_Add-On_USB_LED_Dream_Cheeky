@@ -85,7 +85,11 @@ dmesg
 
 
 ## How a add-on can use USB devices
-The add-on carries for the most operating systems a binary that can interface the HID interface. The add-on can execute this binary but only as a real file in filesystem:
+The add-on carries for the most operating systems a binary that can interface the HID interface. The add-on can execute this binary but only as a real file in filesystem.
+- Copy binaries from add-on to local file system (profile directory)
+- Make them executable
+- Execute them
+ 
 
 ```
     function copyDataURLToFile(aURL, file, callback) {
@@ -133,7 +137,7 @@ The add-on carries for the most operating systems a binary that can interface th
         
         ...
         
-        self.runFile =
+self.runFile =
     {
       id: "usbmailaction@bohne-lang.de#runFile",
       name: self.strings.GetStringFromName("usbmailaction.runfile.name"),
@@ -164,8 +168,8 @@ The add-on carries for the most operating systems a binary that can interface th
 		let sysinfo = Cc["@mozilla.org/system-info;1"].getService(Ci.nsIPropertyBag2); 
         	let xr = Cc["@mozilla.org/xre/app-info;1"].getService(Ci.nsIXULRuntime);
 
-		 var OSname = sysinfo.getProperty("name")
-   var Arch = sysinfo.getProperty("arch");
+		var OSname = sysinfo.getProperty("name")
+   		var Arch = sysinfo.getProperty("arch");
 
 	  	if(OSname == "Windows_NT") 	{ fileURL = fileURL + "\\blinky_" + Arch +".exe"; }
   		if(OSname == "Darwin") 		{ fileURL = fileURL + "/blinky_" + Arch +".app"; }
