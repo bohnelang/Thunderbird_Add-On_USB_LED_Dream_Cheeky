@@ -82,3 +82,118 @@ dmesg
  sudo echo "1" > /sys/class/leds/riso_kagaku0\:blue/brightness 
  sudo echo "0" > /sys/class/leds/riso_kagaku0\:blue/brightness
 ```
+
+
+## How a add-on can use USB devices
+The add-on carries for the most operating systems a binary that can interface the HID interface. The add-on can execute this binary but only as a real file in filesystem:
+
+```
+    function copyDataURLToFile(aURL, file, callback) {
+      let uri = Services.io.newURI(aURL),
+          newChannelFun = Services.io.newChannelFromURI ?
+                          Services.io.newChannelFromURI.bind(Services.io) :
+                          Services.io.newChannelFromURI2.bind(Services.io),
+          channel = newChannelFun(uri,
+                    null,
+                    Services.scriptSecurityManager.getSystemPrincipal(),
+                    null,
+                    Ci.nsILoadInfo.SEC_REQUIRE_SAME_ORIGIN_DATA_INHERITS,
+                    Ci.nsIContentPolicy.TYPE_OTHER);
+
+      NetUtil.asyncFetch(channel, function(istream) {
+        var ostream = Cc["@mozilla.org/network/file-output-stream;1"].
+                      createInstance(Ci.nsIFileOutputStream);
+        //ostream.init(file, -1, -1,  Ci.nsIFileOutputStream.DEFER_OPEN); /
+        ostream.init(file, -1, parseInt("0755", 8) ,  Ci.nsIFileOutputStream.DEFER_OPEN); // AB
+        NetUtil.asyncCopy(istream, ostream, function(result) {
+          callback && callback(file, result);
+        });
+      });
+    }
+
+	  
+        let fileList = ['blinky_x86-64','blinky_x86','blinky_x86-64.app','blinky_x86.app','blinky_x86-64.exe','blinky_x86.exe'];
+
+        for (let i=0; i<fileList.length; i++) {
+          let name = fileList[i],
+              file =  FileUtils.getFile("ProfD", new Array("extensions", "usbmailaction","bin", name)); 
+          try {
+            if (file && ( !file.exists() || util.isDebug ) ) {
+              Services.console.logStringMessage("Copy Files for local: " + name );
+              copyDataURLToFile("chrome://usbmailaction/content/bin/" + name, file);
+            }
+            else
+              if (util.isDebug) Services.console.logStringMessage("File exists: " + file.path);
+          }
+          catch(ex) {
+            re(ex);
+          }
+        };
+        
+        
+        ...
+        
+        self.runFile =
+    {
+      id: "usbmailaction@bohne-lang.de#runFile",
+      name: self.strings.GetStringFromName("usbmailaction.runfile.name"),
+      apply: function(aMsgHdrs, aActionValue, aListener, aType, aMsgWindow) {
+        var file = Cc["@mozilla.org/file/local;1"]
+                     .createInstance(Ci.nsILocalFile || Ci.nsIFile);
+
+	Components.utils.import("resource://gre/modules/FileUtils.jsm");
+
+	let binfileURL =  FileUtils.getFile("ProfD", new Array("extensions", "usbmailaction","bin"));
+        var fileURL = binfileURL.path;
+         
+	let prefs = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
+    	prefs = prefs.getBranch("extensions.usbmailaction.");
+
+	let d = new Date().getTime();
+
+    	try {
+      		let lastexecution  = prefs.getIntPref("lastexecution");
+    	} catch (e) { let lastexecution = d;}
+	
+	
+	if( 1==1 || d - lastexecution > 3) {
+		 try {
+		 	prefs.setIntPref("lastexecution",d);
+		} catch (e) {Services.console.logStringMessage("Cannot set time");}
+	
+		let sysinfo = Cc["@mozilla.org/system-info;1"].getService(Ci.nsIPropertyBag2); 
+        	let xr = Cc["@mozilla.org/xre/app-info;1"].getService(Ci.nsIXULRuntime);
+
+		 var OSname = sysinfo.getProperty("name")
+   var Arch = sysinfo.getProperty("arch");
+
+	  	if(OSname == "Windows_NT") 	{ fileURL = fileURL + "\\blinky_" + Arch +".exe"; }
+  		if(OSname == "Darwin") 		{ fileURL = fileURL + "/blinky_" + Arch +".app"; }
+  		if(OSname == "Linux") 		{ fileURL = fileURL + "/blinky_" + Arch; }
+	
+		if (util.isDebug) {	
+	      		Services.console.logStringMessage(OSname + " / " + Arch);
+	      		Services.console.logStringMessage("Exec Blinky " + fileURL);
+        	}
+
+
+        	file.initWithPath(fileURL);
+
+        	for (var messageIndex = 0; messageIndex < aMsgHdrs.length; messageIndex++) {
+          		let theProcess = Cc["@mozilla.org/process/util;1"]
+                           .createInstance(Ci.nsIProcess);
+
+          		theProcess.init(file);
+          		theProcess.run(false,[aActionValue],1);
+        	}
+      	}
+      },
+
+      isValidForType: function(type, scope) {return runFileEnabled;},
+      validateActionValue: function(value, folder, type) { return null;},
+      allowDuplicates: true,
+      needsBody: false
+    } // end runFile
+
+ ```
+ I did a long research on internet but found no solution like this. It  seems to me that is a new way that Thunderbird can execute build-in binary programs. 
