@@ -3,7 +3,7 @@
 
 **This add-on is outdated - the last version you can run is Thunderbird 68.0. With Thunderbird 78 a new add-on-API was implemented and at the moement I do not have the time to update implementation...**
 
-**Work around:** Combine the add-on "FilaQuilla" and the "blinky" binary from this project and run this program on new incoming mails. 
+**Work around:** Combine the add-on ["FilaQuilla"](https://addons.thunderbird.net/de/thunderbird/addon/filtaquilla/) and the "blinky" binary from this project (see directory USB-Interface/builds/ ) and run this program on new incoming mails. 
 
 
 ![USB Webmail notifier](./gitmisc/LED2.jpg)
@@ -53,7 +53,7 @@ There is only one property you can set - Debug enabled.
 ## Acknowledgment
 This project combines experience and code from other developer. The most of the Thunderbird add-on code was taken from Axel's FiltaQuilla.
 
-- Axel Grude (Realraven) for his FiltaQuilla (and ToneQuilla [https://github.com/RealRaven2000](https://github.com/RealRaven2000) 
+- Axel Grude (Realraven) for his FiltaQuilla [https://github.com/RealRaven2000](https://github.com/RealRaven2000) 
 - R Kent James (rkent) [https://github.com/rkent/](https://github.com/rkent/glodaquilla)
 - Paweł Tomulik (ptomulik) [https://github.com/ptomulik](https://github.com/ptomulik) 
 - Paul Gallagher (tardate) for the blincy.c code [LittleArduinoProjects/Electronics101/UsbNotifier/](https://github.com/tardate/LittleArduinoProjects/blob/master/Electronics101/UsbNotifier/)
